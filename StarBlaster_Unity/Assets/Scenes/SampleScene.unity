@@ -151,7 +151,8 @@ MonoBehaviour:
   waveConfigs:
   - {fileID: 11400000, guid: 6fa208501c1d7ad4489d081add83d5c3, type: 2}
   - {fileID: 11400000, guid: bbb7d17f780b0d746ab94fbe09f15449, type: 2}
-  timeBetweenWaves: 5
+  timeBetweenWaves: 0
+  isLooping: 1
 --- !u!4 &477851036
 Transform:
   m_ObjectHideFlags: 0
@@ -409,6 +410,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1453199550 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6515834810009693321, guid: db6df19530d622847bbcf7b88ee2585e, type: 3}
+  m_PrefabInstance: {fileID: 6532158058376257607}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1453199557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453199550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94608ef4814f8da41bf180b364ede6d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Shooter
+  projectilePrefab: {fileID: 5610298930326772721, guid: ea931ef511ebd634ead9526e85ae4683, type: 3}
+  projectileSpeed: 10
+  projectileLifetime: 5
+  fireRate: 0.2
+  isFiring: 0
 --- !u!1001 &6532158058376257607
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -464,7 +487,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6515834810009693321, guid: db6df19530d622847bbcf7b88ee2585e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1453199557}
   m_SourcePrefab: {fileID: 100100000, guid: db6df19530d622847bbcf7b88ee2585e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

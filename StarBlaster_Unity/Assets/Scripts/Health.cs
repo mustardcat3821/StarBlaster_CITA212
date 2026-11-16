@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
         DamageDealer damageDealer = other.GetComponent<DamageDealer>();
         if (damageDealer != null)
         {
+            ScoreManager.FindAnyObjectByType<ScoreManager>().SubtractScore(10);
             TakeDamage(damageDealer.GetDamage());
             damageDealer.Hit();
         }

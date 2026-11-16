@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 1760314854339965705}
   m_Layer: 7
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb1fd2aa693d04469c052435b83c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  health: 50
+  health: 30
 --- !u!1 &8978090615328602222
 GameObject:
   m_ObjectHideFlags: 0

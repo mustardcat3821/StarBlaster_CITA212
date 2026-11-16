@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     {
         MovePlayer();
         FireShooter();
-    }
+    } 
 
     void MovePlayer()
     {
@@ -55,5 +55,22 @@ public class PlayerController : MonoBehaviour
         Camera mainCamera = Camera.main;
         minBound = mainCamera.ViewportToWorldPoint(new Vector2(0, 0));
         maxBound = mainCamera.ViewportToWorldPoint(new Vector2(1, 1));
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Collectible"))
+        {
+            ScoreManager.FindAnyObjectByType<ScoreManager>().AddScore(10);
+            Destroy(other.gameObject);
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Enemy"))
+        {
+            ScoreManager.FindAnyObjectByType<ScoreManager>().SubtractScore(10);
+        }
     }
 }

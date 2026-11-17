@@ -3,12 +3,14 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] int health = 50;
+    [SerializeField] ParticleSystem hitParticles; 
 
     void OnTriggerEnter2D(Collider2D other)
     {
         DamageDealer damageDealer = other.GetComponent<DamageDealer>();
         if (damageDealer != null)
         {
+            PlayHitParticles();
             ScoreManager.FindAnyObjectByType<ScoreManager>().SubtractScore(10);
             TakeDamage(damageDealer.GetDamage());
             damageDealer.Hit();
@@ -21,6 +23,15 @@ public class Health : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+        }
+    }
+
+    void PlayHitParticles()
+    {
+        if (hitParticles != null)
+        {
+            ParticleSystem particles = Instantiate(hitParticles, transform.position, Quaternion.identity);
+            Destroy(particles.gameObject, particles.main.duration + particles.main.startLifetime.constantMax);
         }
     }
 

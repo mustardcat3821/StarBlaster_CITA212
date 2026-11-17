@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 605293084748912820}
   - component: {fileID: 3541100478708541834}
   - component: {fileID: 614211533962738634}
+  - component: {fileID: 1189252539668232493}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -220,6 +221,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb1fd2aa693d04469c052435b83c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  health: 50
+  health: 100
   hitParticles: {fileID: 2766209784603175501, guid: 411ef81e62c88f74cb3dd2f0cb3d9eb5, type: 3}
   applyCameraShake: 1
+--- !u!114 &1189252539668232493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6515834810009693321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94608ef4814f8da41bf180b364ede6d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Shooter
+  projectilePrefab: {fileID: 5610298930326772721, guid: ea931ef511ebd634ead9526e85ae4683, type: 3}
+  projectileSpeed: 10
+  projectileLifetime: 5
+  baseFireRate: 0.2
+  useAI: 0
+  minimumFireRate: 0.2
+  fireRateVariance: 0
+  isFiring: 0

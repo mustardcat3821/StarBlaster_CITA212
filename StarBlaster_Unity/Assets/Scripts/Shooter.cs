@@ -1,3 +1,4 @@
+
 using System.Collections;
 using UnityEngine;
 
@@ -18,7 +19,7 @@ public class Shooter : MonoBehaviour
     Coroutine fireCoroutine;
     AudioManager audioManager;
 
-    private void Start()
+    void Start()
     {
         audioManager = FindFirstObjectByType<AudioManager>();
 
@@ -30,10 +31,7 @@ public class Shooter : MonoBehaviour
 
     void Update()
     {
-        if (isFiring)
-        {
-            Fire();
-        }
+        Fire();
     }
 
     void Fire()
@@ -54,7 +52,7 @@ public class Shooter : MonoBehaviour
         while (true)
         {
             GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-            
+
             projectile.transform.rotation = transform.rotation;
 
             Rigidbody2D projectileRB = projectile.GetComponent<Rigidbody2D>();

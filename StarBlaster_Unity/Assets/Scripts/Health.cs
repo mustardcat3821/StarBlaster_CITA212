@@ -1,5 +1,7 @@
 using System;
+using Unity.VectorGraphics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -7,6 +9,7 @@ public class Health : MonoBehaviour
     [SerializeField] ParticleSystem hitParticles;
 
     [SerializeField] bool applyCameraShake;
+    [SerializeField] bool useHealthPoints;
     CameraShake cameraShake;
     AudioManager audioManager;
 
@@ -31,6 +34,11 @@ public class Health : MonoBehaviour
             {
                 cameraShake.Play();
             }
+
+            if (useHealthPoints)
+            {
+                HealthManager.FindAnyObjectByType<HealthManager>().SubtractHealth(damageDealer.GetDamage());
+            }
         }
     }
 
@@ -40,6 +48,13 @@ public class Health : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+        }
+
+        if (health <= 0 && useHealthPoints)
+        {
+            Destroy(gameObject);
+            WaitForSeconds wait = new WaitForSeconds(1f);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
